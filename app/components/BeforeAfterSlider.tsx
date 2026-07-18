@@ -23,8 +23,8 @@ export function BeforeAfterSlider({
     <div className="mx-auto w-full max-w-sm">
       <div className="relative aspect-[3/4] select-none overflow-hidden rounded-sm bg-sand">
         <Image
-          src={beforeSrc}
-          alt={beforeAlt}
+          src={afterSrc}
+          alt={afterAlt}
           fill
           sizes="(min-width: 640px) 384px, 90vw"
           className="object-cover"
@@ -35,8 +35,8 @@ export function BeforeAfterSlider({
           style={{ clipPath: `inset(0 ${100 - value}% 0 0)` }}
         >
           <Image
-            src={afterSrc}
-            alt={afterAlt}
+            src={beforeSrc}
+            alt={beforeAlt}
             fill
             sizes="(min-width: 640px) 384px, 90vw"
             className="object-cover"
@@ -56,14 +56,14 @@ export function BeforeAfterSlider({
           onChange={(event) => setValue(Number(event.target.value))}
           className="ba-range absolute inset-0 z-30 h-full w-full"
           aria-label={caption}
-          aria-valuetext={`${value}% after, ${100 - value}% before`}
+          aria-valuetext={`${value}% before, ${100 - value}% after`}
         />
 
         <span className="pointer-events-none absolute left-3 top-3 z-20 bg-espresso/85 px-2 py-1 text-[11px] font-medium uppercase tracking-wide text-cream">
-          After
+          Before
         </span>
         <span className="pointer-events-none absolute right-3 top-3 z-20 bg-espresso/85 px-2 py-1 text-[11px] font-medium uppercase tracking-wide text-cream">
-          Before
+          After
         </span>
 
         <div

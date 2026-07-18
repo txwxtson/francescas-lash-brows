@@ -18,7 +18,7 @@ const jost = Jost({
 export const metadata: Metadata = {
   title: "Francesca's Lash & Brows | Mobile Lash & Brow Artist, Greater Manchester",
   description:
-    "Precision lash and brow artistry that comes to you. Classic, hybrid & volume lashes, brow lamination and tint — mobile across Greater Manchester.",
+    "Precision brow and lash artistry that comes to you. Signature brows, brow lamination, lash lifts and tints — mobile across Greater Manchester.",
 };
 
 export const viewport: Viewport = {

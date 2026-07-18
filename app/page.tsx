@@ -5,37 +5,64 @@ import { Reveal } from "./components/Reveal";
 import { SectionHeading } from "./components/SectionHeading";
 import { BeforeAfterSlider } from "./components/BeforeAfterSlider";
 
-const WHATSAPP_NUMBER = "447000000000";
+const WHATSAPP_NUMBER = "447401344991";
 const WHATSAPP_MESSAGE = "Hi Francesca, I'd love to book a lash/brow appointment!";
 const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+const WHATSAPP_FLOAT_NUMBER = "447401344991";
+const WHATSAPP_FLOAT_HREF = `https://wa.me/${WHATSAPP_FLOAT_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 const INSTAGRAM_HANDLE = "francescaslashandbrows";
 const INSTAGRAM_HREF = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 const services = [
   {
-    name: "Classic Lashes",
-    blurb: "One extension per natural lash, for a soft, your-lashes-but-better finish.",
-    price: "from £45",
-  },
-  {
-    name: "Hybrid Lashes",
-    blurb: "A textured mix of classic and volume, for definition without the drama.",
-    price: "from £55",
-  },
-  {
-    name: "Volume Lashes",
-    blurb: "Fine, lightweight fans built up for a fuller, more dramatic finish.",
-    price: "from £65",
+    name: "Signature Brow",
+    blurb:
+      "Brow mapping tailored to your face shape, plus a tint, trim, wax, and style for a polished finish.",
+    price: "£20",
   },
   {
     name: "Brow Lamination",
-    blurb: "Sculpted, fuller-looking brows that hold their shape for weeks.",
-    price: "from £35",
+    blurb:
+      "A smoothing treatment that sets brows into a fuller, fluffy or sleek shape, with a lifted finish that lasts.",
+    price: "£30",
   },
   {
-    name: "Tint — Lash or Brow",
-    blurb: "A quick way to define and deepen colour in between treatments.",
-    price: "from £15",
+    name: "Brow Tint",
+    blurb: "Adds depth and definition to your brows, natural or bold.",
+    price: "£8",
+  },
+  {
+    name: "Brow Wax",
+    blurb: "Precision waxing for clean, defined brow shape.",
+    price: "£6",
+  },
+  {
+    name: "Eyelash Tint",
+    blurb: "Darkens natural lashes for a fuller look, no mascara needed.",
+    price: "£8",
+  },
+  {
+    name: "Korean Lash Lift",
+    blurb:
+      "A soft, natural-looking lift tailored to your eye shape, lasting 6–8 weeks.",
+    price: "£32",
+  },
+  {
+    name: "Keratin Lash Lift",
+    blurb:
+      "Lifts and conditions natural lashes for a longer, open-eyed look, lasting 6–8 weeks.",
+    price: "£36",
+  },
+  {
+    name: "Upper Lip Wax",
+    blurb: "Quick, precise waxing for smooth results.",
+    price: "£6",
+  },
+  {
+    name: "Lash Lift Aftercare Treatment",
+    blurb: "An add-on to help protect and prolong your lash lift results.",
+    price: "+£5",
   },
 ];
 
@@ -53,7 +80,7 @@ const steps = [
   {
     number: "03",
     title: "I come to you",
-    body: "I arrive with a full professional set-up — you just need a chair, good light, and twenty minutes to relax.",
+    body: "I bring the full professional set-up with me, chair included — you just need good light and a bit of time to relax.",
   },
 ];
 
@@ -83,7 +110,7 @@ export default function Home() {
       <header className="sticky top-0 z-40 border-b border-tan/30 bg-cream/90 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3 sm:px-8">
           <a href="#home" className="font-display text-2xl text-espresso">
-            Francesca&rsquo;s
+            FLB
           </a>
           <a
             href={WHATSAPP_HREF}
@@ -155,7 +182,7 @@ export default function Home() {
               <div className="relative mx-auto aspect-[3/4] w-full max-w-sm overflow-hidden rounded-sm bg-sand">
                 <Image
                   src="/image6.jpeg"
-                  alt="Francesca's brow lamination work, finished result"
+                  alt="Francesca, mobile lash and brow technician"
                   fill
                   sizes="(min-width: 640px) 400px, 90vw"
                   className="object-cover"
@@ -167,18 +194,15 @@ export default function Home() {
                 Hi, I&rsquo;m Francesca.
               </p>
               <p className="mt-6 text-lg leading-relaxed text-espresso/85">
-                I&rsquo;m a mobile lash and brow artist working across Greater
-                Manchester. Rather than a salon chair, I bring a fully mobile,
-                professional-grade set-up straight to your home — so you get
-                the same precision and hygiene standards you&rsquo;d expect
-                from a studio, without carving an afternoon out of your day.
+                A 22-year-old student nurse and fully qualified, accredited
+                lash and brow technician, I bring the same care and
+                attention to detail from my nursing training into every
+                appointment.
               </p>
               <p className="mt-4 text-lg leading-relaxed text-espresso/85">
-                Every set is fitted to your natural lash line and face shape,
-                because good lash work should look like it was made for you,
-                not applied to you. Fully insured, patch-test friendly, and
-                meticulous about hygiene — because this is your face, and I
-                take that seriously.
+                That means treatments you can trust, delivered in the
+                comfort of your own home, across Greater Manchester. Fully
+                insured, so you can relax completely.
               </p>
             </Reveal>
           </div>
@@ -191,8 +215,8 @@ export default function Home() {
           <div className="mx-auto max-w-2xl">
             <SectionHeading title="The Menu" />
             <Reveal delayMs={100}>
-              <p className="mt-3 text-sm text-taupe">
-                Full menu and pricing to follow — treat the below as a guide.
+              <p className="mt-3 text-sm italic text-taupe">
+                Enhancing your natural beauty — because natural is best.
               </p>
             </Reveal>
 
@@ -383,6 +407,16 @@ export default function Home() {
           rights reserved.
         </p>
       </footer>
+
+      <a
+        href={WHATSAPP_FLOAT_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Message on WhatsApp"
+        className="fixed bottom-5 left-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+      >
+        <IconWhatsApp className="h-7 w-7" />
+      </a>
     </>
   );
 }
