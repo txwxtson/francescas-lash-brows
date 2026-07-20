@@ -11,59 +11,74 @@ const WHATSAPP_HREF = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 
 const WHATSAPP_FLOAT_NUMBER = "447401344991";
 const WHATSAPP_FLOAT_HREF = `https://wa.me/${WHATSAPP_FLOAT_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
-const INSTAGRAM_HANDLE = "francescaslashandbrows";
-const INSTAGRAM_HREF = `https://instagram.com/${INSTAGRAM_HANDLE}`;
+const INSTAGRAM_HANDLE = "francescalashbrows";
+const INSTAGRAM_HREF = "https://www.instagram.com/francescalashbrows/";
 
 const services = [
   {
     name: "Signature Brow",
     blurb:
-      "Brow mapping tailored to your face shape, plus a tint, trim, wax, and style for a polished finish.",
+      "A bespoke brow treatment including brow mapping, waxing, trimming, tinting and styling to create balanced, defined brows tailored to your face shape.",
     price: "£20",
   },
   {
     name: "Brow Lamination",
     blurb:
-      "A smoothing treatment that sets brows into a fuller, fluffy or sleek shape, with a lifted finish that lasts.",
+      "A treatment that smooths and sets your natural brow hairs into your desired shape, creating fuller, fluffier brows with a lifted finish that lasts up to 6–8 weeks.",
     price: "£30",
   },
   {
     name: "Brow Tint",
-    blurb: "Adds depth and definition to your brows, natural or bold.",
+    blurb:
+      "A semi-permanent tint that darkens and defines your natural brows, enhancing their shape and creating a fuller, more polished look that lasts up to 4–6 weeks.",
     price: "£8",
   },
   {
     name: "Brow Wax",
-    blurb: "Precision waxing for clean, defined brow shape.",
+    blurb:
+      "A precision waxing treatment that removes unwanted hairs and shapes your brows to complement your facial features, leaving a clean, defined finish.",
     price: "£6",
   },
   {
     name: "Eyelash Tint",
-    blurb: "Darkens natural lashes for a fuller look, no mascara needed.",
+    blurb:
+      "A semi-permanent tint that darkens your natural lashes from root to tip, creating the appearance of longer, fuller lashes without the need for mascara.",
     price: "£8",
   },
   {
     name: "Korean Lash Lift",
     blurb:
-      "A soft, natural-looking lift tailored to your eye shape, lasting 6–8 weeks.",
+      "A gentle lash lift that creates a soft, natural-looking curl, enhancing your own lashes for a brighter, more open-eyed appearance that lasts 6–8 weeks.",
     price: "£32",
   },
   {
     name: "Keratin Lash Lift",
     blurb:
-      "Lifts and conditions natural lashes for a longer, open-eyed look, lasting 6–8 weeks.",
+      "A nourishing lash lift infused with keratin to lift, strengthen and condition your natural lashes, leaving them healthier, longer-looking and beautifully curled for up to 6–8 weeks.",
     price: "£36",
   },
   {
     name: "Upper Lip Wax",
-    blurb: "Quick, precise waxing for smooth results.",
+    blurb:
+      "A quick and gentle waxing treatment that removes unwanted hair from the upper lip, leaving your skin smooth, clean and hair-free for longer than shaving.",
     price: "£6",
   },
   {
     name: "Lash Lift Aftercare Treatment",
-    blurb: "An add-on to help protect and prolong your lash lift results.",
+    blurb:
+      "A nourishing keratin conditioning treatment designed to hydrate, strengthen and protect your natural lashes after a lash lift, helping maintain healthy lashes and prolong your lift results.",
     price: "+£5",
   },
+];
+
+const shadeSwatches = [
+  { src: "/brow-shades/shade-1.png", alt: "Ash blonde brow tint shade", width: 210, height: 57 },
+  { src: "/brow-shades/shade-2.png", alt: "Light brown brow tint shade", width: 228, height: 58 },
+  { src: "/brow-shades/shade-3.png", alt: "Auburn brow tint shade", width: 226, height: 59 },
+  { src: "/brow-shades/shade-4.png", alt: "Medium brown brow tint shade", width: 222, height: 58 },
+  { src: "/brow-shades/shade-5.png", alt: "Dark brown brow tint shade", width: 233, height: 57 },
+  { src: "/brow-shades/shade-6.png", alt: "Espresso brow tint shade", width: 228, height: 57 },
+  { src: "/brow-shades/shade-7.png", alt: "Black brow tint shade", width: 229, height: 60 },
 ];
 
 const steps = [
@@ -84,17 +99,12 @@ const steps = [
   },
 ];
 
-const areas = [
-  "Manchester",
-  "Salford",
-  "Stockport",
-  "Trafford",
-  "Bolton",
-  "Bury",
-  "Oldham",
-  "Rochdale",
-  "Tameside",
-  "Wigan",
+const localTowns = [
+  "Marple",
+  "Bramhall",
+  "Cheadle",
+  "Cheadle Hulme",
+  "The Heatons",
 ];
 
 export default function Home() {
@@ -135,7 +145,7 @@ export default function Home() {
               className="hero-reveal text-xs font-medium uppercase tracking-[0.2em] text-taupe"
               style={{ animationDelay: "0.05s" }}
             >
-              Greater Manchester &middot; Mobile Lash &amp; Brow Artist
+              Serving Stockport &amp; Greater Manchester
             </p>
             <h1
               className="hero-reveal mt-5 font-display text-6xl leading-[1.05] text-espresso sm:text-8xl"
@@ -219,6 +229,12 @@ export default function Home() {
                 Enhancing your natural beauty — because natural is best.
               </p>
             </Reveal>
+            <Reveal delayMs={130}>
+              <p className="mt-2 text-xs text-taupe/70">
+                Travel cost may apply depending on distance — confirmed at
+                booking.
+              </p>
+            </Reveal>
 
             <ul className="mt-10 divide-y divide-espresso/10">
               {services.map((service, i) => (
@@ -243,6 +259,24 @@ export default function Home() {
                 </Reveal>
               ))}
             </ul>
+
+            <Reveal delayMs={200} className="mt-10">
+              <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-taupe">
+                Available Shades
+              </p>
+              <div className="mx-auto mt-4 grid w-fit grid-cols-4 gap-x-3 gap-y-3">
+                {shadeSwatches.map((shade) => (
+                  <Image
+                    key={shade.src}
+                    src={shade.src}
+                    alt={shade.alt}
+                    width={shade.width}
+                    height={shade.height}
+                    className="h-6 w-auto sm:h-8"
+                  />
+                ))}
+              </div>
+            </Reveal>
           </div>
         </section>
 
@@ -254,9 +288,10 @@ export default function Home() {
             <SectionHeading eyebrow="The Results" title="Before &amp; After" />
             <Reveal delayMs={100}>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-espresso/80">
-                A few recent transformations — brow lamination and tint,
-                taking brows from natural and undone to shaped, full, and
-                defined.
+                A few recent transformations from our Signature Brow
+                treatment — brow mapping, waxing, trimming, tinting and
+                styling, taking brows from natural and undone to shaped,
+                full, and defined.
               </p>
             </Reveal>
 
@@ -264,8 +299,8 @@ export default function Home() {
               <BeforeAfterSlider
                 beforeSrc="/image1.jpeg"
                 afterSrc="/image2.jpeg"
-                beforeAlt="Before brow lamination — natural, unshaped brow"
-                afterAlt="After brow lamination — fuller, defined brow"
+                beforeAlt="Before Signature Brow — natural, unshaped brow"
+                afterAlt="After Signature Brow — fuller, defined brow"
               />
             </Reveal>
 
@@ -278,7 +313,7 @@ export default function Home() {
                   <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-sand">
                     <Image
                       src="/image4.jpeg"
-                      alt="Before brow lamination, natural brow"
+                      alt="Before Signature Brow, natural brow"
                       fill
                       sizes="(min-width: 640px) 300px, 45vw"
                       className="object-cover"
@@ -292,7 +327,7 @@ export default function Home() {
                   <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-sand">
                     <Image
                       src="/image3.jpeg"
-                      alt="After brow lamination, fuller defined brow"
+                      alt="After Signature Brow, fuller defined brow"
                       fill
                       sizes="(min-width: 640px) 300px, 45vw"
                       className="object-cover"
@@ -372,8 +407,7 @@ export default function Home() {
               Francesca&rsquo;s Lash &amp; Brows
             </p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed">
-              Covering Greater Manchester, including {areas.slice(0, -1).join(", ")}{" "}
-              and {areas[areas.length - 1]}.
+              Based near Romiley, Stockport — serving {localTowns.join(", ")}.
             </p>
           </div>
 
@@ -416,6 +450,16 @@ export default function Home() {
         className="fixed bottom-5 left-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
       >
         <IconWhatsApp className="h-7 w-7" />
+      </a>
+
+      <a
+        href={INSTAGRAM_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit on Instagram"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#feda75] via-[#d62976] to-[#4f5bd5] text-white shadow-lg transition-transform hover:scale-105"
+      >
+        <IconInstagram className="h-7 w-7" />
       </a>
     </>
   );
