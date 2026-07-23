@@ -65,16 +65,6 @@ const services = [
   },
 ];
 
-const shadeSwatches = [
-  { src: "/brow-shades/shade-1.png", alt: "Ash blonde brow tint shade", width: 210, height: 57 },
-  { src: "/brow-shades/shade-2.png", alt: "Light brown brow tint shade", width: 228, height: 58 },
-  { src: "/brow-shades/shade-3.png", alt: "Auburn brow tint shade", width: 226, height: 59 },
-  { src: "/brow-shades/shade-4.png", alt: "Medium brown brow tint shade", width: 222, height: 58 },
-  { src: "/brow-shades/shade-5.png", alt: "Dark brown brow tint shade", width: 233, height: 57 },
-  { src: "/brow-shades/shade-6.png", alt: "Espresso brow tint shade", width: 228, height: 57 },
-  { src: "/brow-shades/shade-7.png", alt: "Black brow tint shade", width: 229, height: 60 },
-];
-
 const steps = [
   {
     number: "01",
@@ -261,24 +251,6 @@ export default function Home() {
                 </Reveal>
               ))}
             </ul>
-
-            <Reveal delayMs={200} className="mt-10">
-              <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-taupe">
-                Available Shades
-              </p>
-              <div className="mx-auto mt-4 grid w-fit grid-cols-4 gap-x-3 gap-y-3">
-                {shadeSwatches.map((shade) => (
-                  <Image
-                    key={shade.src}
-                    src={shade.src}
-                    alt={shade.alt}
-                    width={shade.width}
-                    height={shade.height}
-                    className="h-6 w-auto sm:h-8"
-                  />
-                ))}
-              </div>
-            </Reveal>
           </div>
         </section>
 
