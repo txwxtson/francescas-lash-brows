@@ -49,19 +49,13 @@ const services = [
     name: "Korean Lash Lift",
     blurb:
       "A gentle lash lift that creates a soft, natural-looking curl, enhancing your own lashes for a brighter, more open-eyed appearance that lasts 6–8 weeks.",
-    price: "£32",
+    price: "£30",
   },
   {
     name: "Keratin Lash Lift",
     blurb:
       "A nourishing lash lift infused with keratin to lift, strengthen and condition your natural lashes, leaving them healthier, longer-looking and beautifully curled for up to 6–8 weeks.",
-    price: "£36",
-  },
-  {
-    name: "Upper Lip Wax",
-    blurb:
-      "A quick and gentle waxing treatment that removes unwanted hair from the upper lip, leaving your skin smooth, clean and hair-free for longer than shaving.",
-    price: "£6",
+    price: "£33",
   },
   {
     name: "Lash Lift Aftercare Treatment",
@@ -235,6 +229,14 @@ export default function Home() {
                 booking.
               </p>
             </Reveal>
+            <Reveal delayMs={150}>
+              <p className="mt-2 text-xs text-taupe/70">
+                A deposit is taken depending on the treatment(s) booked. If
+                it&rsquo;s your first time booking with me, a short
+                consultation (up to 10 minutes) is included free of charge to
+                discuss what you&rsquo;d like from your appointment.
+              </p>
+            </Reveal>
 
             <ul className="mt-10 divide-y divide-espresso/10">
               {services.map((service, i) => (
@@ -259,6 +261,23 @@ export default function Home() {
                 </Reveal>
               ))}
             </ul>
+
+            <Reveal delayMs={190} className="mt-12">
+              <div className="mx-auto max-w-xs">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-sand">
+                  <Image
+                    src="/keratinlashlift.png"
+                    alt="Keratin Lash Lift treatment"
+                    fill
+                    sizes="(min-width: 640px) 320px, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+                <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-taupe">
+                  Keratin Lash Lift
+                </p>
+              </div>
+            </Reveal>
 
             <Reveal delayMs={200} className="mt-10">
               <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-taupe">
@@ -308,6 +327,9 @@ export default function Home() {
               <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-taupe">
                 Another set, same story
               </p>
+              <p className="mt-1 text-center text-xs italic text-espresso/60">
+                Brow Lamination
+              </p>
               <div className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-sand">
@@ -337,6 +359,20 @@ export default function Home() {
                     After
                   </p>
                 </div>
+              </div>
+            </Reveal>
+
+            <Reveal delayMs={140} className="mt-16">
+              <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-taupe">
+                Korean Lash Lift
+              </p>
+              <div className="mt-6">
+                <BeforeAfterSlider
+                  beforeSrc="/korlashliftbefore.png"
+                  afterSrc="/korlashliftafter.png"
+                  beforeAlt="Before Korean Lash Lift — natural, unlifted lashes"
+                  afterAlt="After Korean Lash Lift — soft, lifted curl"
+                />
               </div>
             </Reveal>
           </div>
