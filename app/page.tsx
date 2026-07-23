@@ -262,23 +262,6 @@ export default function Home() {
               ))}
             </ul>
 
-            <Reveal delayMs={190} className="mt-12">
-              <div className="mx-auto max-w-xs">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-sand">
-                  <Image
-                    src="/keratinlashlift.png"
-                    alt="Keratin Lash Lift treatment"
-                    fill
-                    sizes="(min-width: 640px) 320px, 90vw"
-                    className="object-cover"
-                  />
-                </div>
-                <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-taupe">
-                  Keratin Lash Lift
-                </p>
-              </div>
-            </Reveal>
-
             <Reveal delayMs={200} className="mt-10">
               <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-taupe">
                 Available Shades
@@ -366,13 +349,52 @@ export default function Home() {
               <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-taupe">
                 Korean Lash Lift
               </p>
-              <div className="mt-6">
-                <BeforeAfterSlider
-                  beforeSrc="/korlashliftbefore.png"
-                  afterSrc="/korlashliftafter.png"
-                  beforeAlt="Before Korean Lash Lift — natural, unlifted lashes"
-                  afterAlt="After Korean Lash Lift — soft, lifted curl"
-                />
+              <div className="mx-auto mt-6 grid max-w-xl grid-cols-2 gap-4 sm:gap-6">
+                <div>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-sand">
+                    <Image
+                      src="/korlashliftbefore.png"
+                      alt="Before Korean Lash Lift, natural lashes"
+                      fill
+                      sizes="(min-width: 640px) 300px, 45vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-taupe">
+                    Before
+                  </p>
+                </div>
+                <div>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-sand">
+                    <Image
+                      src="/korlashliftafter.png"
+                      alt="After Korean Lash Lift, lifted curled lashes"
+                      fill
+                      sizes="(min-width: 640px) 300px, 45vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="mt-2 text-center text-xs font-medium uppercase tracking-wide text-taupe">
+                    After
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delayMs={160} className="mt-16">
+              <p className="text-center text-sm font-medium uppercase tracking-[0.2em] text-taupe">
+                Keratin Lash Lift
+              </p>
+              <div className="mx-auto mt-6 max-w-xs">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-sand">
+                  <Image
+                    src="/keratinlashlift.png"
+                    alt="Keratin Lash Lift treatment"
+                    fill
+                    sizes="(min-width: 640px) 320px, 90vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </Reveal>
           </div>
